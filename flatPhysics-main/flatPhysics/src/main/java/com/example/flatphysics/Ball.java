@@ -54,6 +54,7 @@ public class Ball {
     public Vector getPos(){
         return pos;
     }
+    public float getRadi(){return r;}
 
 
     public void drawBall(GraphicsContext gc) {
@@ -76,7 +77,7 @@ public class Ball {
         }
         if(pos.getY() <= 0 + r || pos.getY() >= 500 - r){
             velocity.setY(velocity.getY() * -1);
-            System.out.println("WALLY");
+            System.out.println("WALL-E");
         }
 }
 
@@ -84,6 +85,7 @@ public boolean colliding(Ball b){
     return Equations.distance(pos, b.pos) <= r + b.r;
 }
 public void resolve(Ball b){
+    Collisions.resolve(this, b);
     System.out.println("Colliding");
 }
 
