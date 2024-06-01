@@ -69,6 +69,15 @@ public class flatPhysics extends Application {
         dist.setTranslateY(-250);
         pane.getChildren().add(dist);
 
+        Vector test = new Vector(15.315f, .012030120f);
+        System.out.println(test.toString());
+        Vector test2 = test.divide(2);
+        System.out.println(test2.toString());
+        Vector test3 = test.multiply(2);
+        System.out.println(test3.toString());
+        Vector test4 = test.normalize();
+        System.out.println(test4.toString());
+
         new AnimationTimer() {
             @Override
             public void handle(long now){

@@ -30,6 +30,11 @@ public class Vector {
         return new Vector(x * u, y * u);
     }
 
+    public Vector divide(float u){
+        float k = 1/u;
+        return this.multiply(k);
+    }
+
     public Vector addition(Vector u){
         return new Vector(x + u.x, y + u.y);
     }
@@ -40,5 +45,19 @@ public class Vector {
 
     public float dot(Vector other){
         return this.x * other.x + this.y * other.y;
+    }
+
+    public String toString(){
+        return "Vector:(" + x + ", " + y + ")";
+    }
+
+    public Vector normalize() {
+        float magnitude = this.getMagnitude();
+        Vector normalized = this.divide(magnitude);
+        return normalized;
+    }
+
+    public float getMagnitude(){
+        return (float)Math.sqrt(x*x + y*y);
     }
 }
